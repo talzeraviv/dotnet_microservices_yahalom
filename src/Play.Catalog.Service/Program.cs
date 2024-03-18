@@ -4,7 +4,6 @@ using MongoDB.Bson.Serialization.Serializers;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 BsonSerializer.RegisterSerializer(new GuidSerializer(MongoDB.Bson.BsonType.String));
 BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(MongoDB.Bson.BsonType.String));
 
