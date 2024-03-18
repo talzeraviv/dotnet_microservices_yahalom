@@ -17,7 +17,7 @@ namespace Play.Catalog.Service.Controllers
         private readonly ItemsRepository itemsRepository = new ItemsRepository();
 
         [HttpGet]
-        public async Task<IEnumerable<ItemDto>> GetAsync()
+        public async Task<IEnumerable<ItemDto>> Get()
         {
             var items = (await itemsRepository.GetAllAsync()).Select(item => item.AsDto());
             return items;
@@ -25,7 +25,7 @@ namespace Play.Catalog.Service.Controllers
 
         // GET /items/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<ItemDto>> GetByIdAsync(Guid id)
+        public async Task<ActionResult<ItemDto>> GetById(Guid id)
         {
             var item = await itemsRepository.GetAsync(id);
 
@@ -37,7 +37,7 @@ namespace Play.Catalog.Service.Controllers
         // ActionResult allows us to return a status code or an object
         // POST /items
         [HttpPost]
-        public async Task<ActionResult<ItemDto>> PostAsync(CreateItemDto createItemDto)
+        public async Task<ActionResult<ItemDto>> Post(CreateItemDto createItemDto)
         {
             var item = new Item
             {
@@ -52,12 +52,12 @@ namespace Play.Catalog.Service.Controllers
             // nameof(GetById) products a header in the response that specifies how to find the item by the getbyid method above.
             // new { id = item.Id} specifies the id of the created item. (Anonymous type)
             // item is the body of the response, which will give the actual item.
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
+            return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
         }
 
         // PUT /items/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(Guid id, UpdateItemDto updateItemDto)
+        public async Task<IActionResult> Put(Guid id, UpdateItemDto updateItemDto)
         {
             var existingItem = await itemsRepository.GetAsync(id);
 
