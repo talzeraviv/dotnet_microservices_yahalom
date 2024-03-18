@@ -33,7 +33,7 @@ namespace Play.Catalog.Service.Controllers
         }
 
         // ActionResult allows us to return a status code or an object
-        // 
+        // POST /items
         [HttpPost]
         public ActionResult<ItemDto> Post(CreateItemDto createItemDto)
         {
@@ -44,6 +44,25 @@ namespace Play.Catalog.Service.Controllers
             // new { id = item.Id} specifies the id of the created item. (Anonymous type)
             // item is the body of the response, which will give the actual item.
             return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
+        }
+
+        // PUT /items/{id}
+        [HttpPut("{id}")]
+        public IActionResult Put(Guid id, UpdateItemDto updateItemDto)
+        {
+            var existingItem = items.Where(item => item.Id == id).SingleOrDefault();
+
+            var updatedItem = existingItem with
+            {
+                Name = updateItemDto.Name,
+                Description = updateItemDto.Description,
+                Price = updateItemDto.Price
+            };
+
+            var index = items.FindIndex(existingItem => existingItem.Id == id);
+            items[index] = updatedItem;
+
+            return NoContent();
         }
     }
 }
