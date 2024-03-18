@@ -9,10 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 var serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>()!;
 var mongoDbSettings = builder.Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>()!;
 
-builder.Services.Configure<MongoDbSettings>(
-            builder.Configuration.GetSection(nameof(MongoDbSettings))
-        );
-
 builder.Services.AddSingleton(serviceProvider =>
 {
     var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
