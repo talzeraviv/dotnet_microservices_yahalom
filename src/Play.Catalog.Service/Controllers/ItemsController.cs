@@ -25,10 +25,11 @@ namespace Play.Catalog.Service.Controllers
             return items;
         }
 
+        // GET /items/{id}
         [HttpGet("{id}")]
         public ItemDto GetById(Guid id)
         {
-            return items.Where(item => item.Id == id).SingleOrDefault();
+            return items.SingleOrDefault(item => item.Id == id);
         }
     }
 }

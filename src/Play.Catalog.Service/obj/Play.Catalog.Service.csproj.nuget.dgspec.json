@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "B:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj": {}
+    "b:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj": {}
   },
   "projects": {
-    "B:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj": {
+    "b:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
+        "projectUniqueName": "b:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
         "projectName": "Play.Catalog.Service",
-        "projectPath": "B:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
+        "projectPath": "b:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
         "packagesPath": "C:\\Users\\talze\\.nuget\\packages\\",
-        "outputPath": "B:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\obj\\",
+        "outputPath": "b:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

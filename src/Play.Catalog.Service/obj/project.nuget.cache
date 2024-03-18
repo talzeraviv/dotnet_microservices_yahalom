@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ClajbFhxpIs3LWjKR65bYChw7rp82OQkqvk5mSSaNouIkBU0yjGnAgXb8vdlnQvna5J7OWuzGKeIbxewT2dW3w==",
+  "dgSpecHash": "aKeMiXbhxSrZUh4PPDrF4SVXb6UD6+5OzJOqh20gwJCi0qktnxKLZMmUiMshC6fYHIGrsK4Q1IkXiyerv2pmCw==",
   "success": true,
-  "projectFilePath": "B:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
+  "projectFilePath": "b:\\Users\\talze\\Desktop\\dotnet_microservices_freecodecamp\\my.project\\play.catalog\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talze\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\talze\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
