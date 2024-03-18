@@ -64,5 +64,15 @@ namespace Play.Catalog.Service.Controllers
 
             return NoContent();
         }
+
+        // DELETE /items/{id}
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
+        {
+            var index = items.FindIndex(existingItem => existingItem.Id == id);
+            items.RemoveAt(index);
+
+            return NoContent();
+        }
     }
 }
