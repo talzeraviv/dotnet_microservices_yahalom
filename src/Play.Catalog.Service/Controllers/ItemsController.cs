@@ -31,5 +31,19 @@ namespace Play.Catalog.Service.Controllers
         {
             return items.SingleOrDefault(item => item.Id == id);
         }
+
+        // ActionResult allows us to return a status code or an object
+        // 
+        [HttpPost]
+        public ActionResult<ItemDto> Post(CreateItemDto createItemDto)
+        {
+            var item = new ItemDto(Guid.NewGuid(), createItemDto.Name, createItemDto.Description, createItemDto.Price, DateTimeOffset.UtcNow);
+
+            // Object that says 'Hey, the item has been created (Status 201) and you can find it at the following route'
+            // nameof(GetById) products a header in the response that specifies how to find the item by the getbyid method above.
+            // new { id = item.Id} specifies the id of the created item. (Anonymous type)
+            // item is the body of the response, which will give the actual item.
+            return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
+        }
     }
 }
