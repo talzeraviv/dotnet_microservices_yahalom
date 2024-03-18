@@ -29,7 +29,7 @@ namespace Play.Catalog.Service.Repositories
         {
             FilterDefinition<Item> filter = filterBuilder.Eq(entity => entity.Id, id);
 
-            return await dbCollection.Find(filter).FirstOrDefaultAsync();
+            return await dbCollection.Find(filter).SingleOrDefaultAsync();
         }
 
         public async Task CreateAsync(Item entity)
