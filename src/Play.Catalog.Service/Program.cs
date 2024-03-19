@@ -10,22 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 var serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>()!;
 var mongoDbSettings = builder.Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>()!;
 
-builder.Services.AddSingleton(serviceProvider =>
-{
-    var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
-    return mongoClient.GetDatabase(serviceSettings.ServiceName);
-});
-
-builder.Services.AddSingleton<IRepository<Item>>(serviceProvider =>
-{
-    var database = serviceProvider.GetService<IMongoDatabase>();
-    return new MongoRepository<Item>(database, "items");
-});
-
-// Add services to the container.
-
-BsonSerializer.RegisterSerializer(new GuidSerializer(MongoDB.Bson.BsonType.String));
-BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(MongoDB.Bson.BsonType.String));
+builder.Services.AddMongo().AddMongoRepository<Item>("items");
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
